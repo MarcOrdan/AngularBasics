@@ -1,0 +1,17 @@
+<!-- <button class="btn btn-primary" (click)="displayText = !displayText">
+  Display Message
+</button> -->
+<button class="btn btn-primary" (click)="onToggleDisplay()">
+  Display Message
+</button>
+<p *ngIf="displayText; else noMessage">{{ displayMessage }}</p>
+<ng-template #noMessage>
+  <p>Message is now hidden.</p>
+</ng-template>
+<div
+  *ngFor="let logItem of log"
+  [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'white-text': logItem >= 5 }"
+>
+  {{ logItem }}
+</div>
